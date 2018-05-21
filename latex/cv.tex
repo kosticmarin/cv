@@ -1,0 +1,143 @@
+% !TEX encoding = UTF-8 Unicode
+\documentclass[a4paper]{article}
+
+\usepackage[
+    top=0.79in,
+    bottom=0.79in,
+    left=0.79in,
+    right=0.79in,
+]{geometry}
+
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{array}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\tabcolsep}{10pt}
+\newlength{\tablewidth}
+
+\setlist[itemize]{topsep=0em, itemsep=0.0em}
+\setlist[itemize,1]{before=\vspace{-1em}}
+
+\newenvironment{period}[2]{%
+\newcommand{\sarma}{#2}%
+\setlength{\tablewidth}{\linewidth}
+\addtolength{\tablewidth}{-2\tabcolsep}
+\begin{tabular}{@{}p{0.75\tablewidth}>{\raggedleft\arraybackslash}p{0.25\tablewidth}@{}}%
+#1 \newline
+\begin{itemize}
+}{%
+\end{itemize} & \sarma \\%
+\end{tabular}\\
+}
+
+\newenvironment{skills}{%
+\setlength{\tablewidth}{\linewidth}
+\addtolength{\tablewidth}{-2\tabcolsep}
+\begin{tabular}{@{}p{0.15\tablewidth}p{0.85\tablewidth}@{}}
+}{%
+\end{tabular}
+}
+
+\titleformat{\section}{\uppercase}{}{0pt}{}[{\vspace{0.5em}\titlerule}]
+\titleformat{\subsection}{\bf}{}{0pt}{}{}
+\titlespacing{\section}{0pt}{1em}{0.5em}
+\titlespacing{\subsection}{0pt}{0pt}{0.1em}
+
+\begin{document}
+\fontfamily{\sfdefault}
+\selectfont
+
+\begin{minipage}{.5\textwidth}
+\LARGE{Marin Koštić}\\
+\normalsize{Slavka Kolara 45b, Velika Gorica, Croatia}
+\end{minipage}%
+\begin{minipage}{.5\textwidth}
+\raggedleft
+\href{mailto:marin.kostic@fer.hr}{marin.kostic@fer.hr} \\
+\href{mailto:kosticmarin@gmail.com}{kosticmarin@gmail.com}\\
++385 91 931 9327 \\
+\href{https://github.com/kosticmarin}{github.com/kosticmarin}\\
+\href{https://www.linkedin.com/in/marin-koštić-495949155}{linkedin/kosticmarin}
+\end{minipage}
+
+\vspace{1em}
+
+\section{work experience}
+\subsection{Amodo d.o.o, Frana Folnegovića 1c, 10000, Zagreb, Croatia}
+\begin{period}{DevOps Engineer}{Jul 2017}
+	\item working as a data analyst and system administrator
+	\item managing infrastructure hosted on AWS and Digital Ocean
+	\item everyday working with Ansible, Nginx, uwsgi, fabric, stress testing, postgresql, development in Django framework implementing multiple API for serving
+	mobile application. Development of in house stress testing tool using locust.io, also development in Java for in house system for GPS track matching, gamification
+	of recorded tracks.
+\end{period}
+\subsection{University of Zagreb, Faculty of Electrical Engineering and Computing, Croatia}
+\begin{period}{Team leader}{Sep 2016 -- Jan 2017}
+    \item managed a team of 5 students in \textit{Pattern recognition} class project
+\end{period}
+\begin{period}{Teaching assistant}{Jan 2015 -- May 2015}
+	\item demonstrator at Laboratory exercises in \textit{Computer Architecture 1} class
+\end{period}
+\section{education}
+\subsection{University of Zagreb, Faculty of Electrical Engineering and Computing, Croatia}
+\begin{period}{Pursuing MSc in Computer Science}{Sep 2016 -- May 2018\linebreak(expected)}
+    \item relevant courses:
+        \textit{Machine Learning},
+        \textit{Pattern Recognition},
+        \textit{Computer Vision},
+        \textit{Digital Image Processing and Analysis},
+        \textit{Text Analysis and Retrieval},
+        \textit{Neural Networks}
+\end{period}
+\begin{period}{BSc in Computer Engineering}{Sep 2012 -- Jul 2016}
+    \item thesis:
+        \textit{Embedded system for Temperature and Humidity measurement}
+    \item relevant courses:
+	\textit{Software Design,}
+	\textit{Operating Systems,}
+	\textit{Introduction to Theoretical Computer Science,}
+	\textit{Probability and Statistics}
+\end{period}
+
+\section{technical skills}
+\begin{skills}
+    Intermediate &
+    \begin{itemize}
+        \item \textbf{Python} -- used in university courses and various projects, familiar with Scikit, Numpy, Tensorflow
+        \item \textbf{Django Framework} -- API development for serving mobile applications
+        \item \textbf{Java (SE)} -- used in university courses and development at Amodo 
+        \item \textbf{PostgreSQL} -- used at Amodo, every day backups, master-slave streaming replication
+        \item \textbf{Linux/Unix} -- used in university courses and personal time
+        \item \textbf{C} -- used in university courses and my BSc thesis
+        \item \textbf{Git} -- used in university courses and projects, every day use at Amodo
+        \item \textbf{Ansible} -- used in deployment at Amodo
+        \item \textbf{Bash} -- used in administrating servers at Amodo
+        \item \textbf{GPG} -- used for secure communication at Amodo, storing credentials
+    \end{itemize} \\
+    Basic &
+    \begin{itemize}
+        \item \textbf{C++} -- used in university courses
+        \item \textbf{Rust Language} -- used in my own personal time
+    \end{itemize} \\
+\end{skills}
+
+\section{other skills and interests}
+\begin{skills}
+        Languages &
+        \begin{itemize}
+                \item Croatian (native),
+                \item English (C1 level, Cambridge CEA)
+        \end{itemize} \\
+        Interests &
+        \begin{itemize}
+        		\item Running
+		\item Brazilian Jiu Jitsu
+    \end{itemize} \\
+\end{skills}
+
+\end{document}
