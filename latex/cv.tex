@@ -35,6 +35,14 @@
 \end{tabular}\\
 }
 
+\newenvironment{period_empty}[2]{%
+\newcommand{\sarma}{#2}%
+\setlength{\tablewidth}{\linewidth}
+\addtolength{\tablewidth}{-2\tabcolsep}
+\begin{tabular}{@{}p{0.75\tablewidth}>{\raggedleft\arraybackslash}p{0.25\tablewidth}@{}}%
+#1
+}{& \sarma \end{tabular}}
+
 \newenvironment{skills}{%
 \setlength{\tablewidth}{\linewidth}
 \addtolength{\tablewidth}{-2\tabcolsep}
@@ -66,82 +74,69 @@
 
 \vspace{1em}
 
-\section{work experience}
-\subsection{Amodo d.o.o, Frana Folnegovića 1c, 10000, Zagreb, Croatia}
-\begin{period}{Data Analyst}{Sep 2018}
-    \item working as an Data Analyst, interpret data, analyze results using statistical techniques and provide ongoing reports
-    \item development in Java for an in house system for GPS track matching, gamification, scoring models of user recorded Trips (GPS track records)
-\end{period}
-\begin{period}{DevOps Engineer}{Jul 2017 -- Sep 2018}
-    \item system administrator
-    \item managing infrastructure hosted on AWS and Digital Ocean
-    \item everyday working with Ansible, Nginx, uwsgi, fabric, stress testing, postgresql, development in Django framework implementing multiple API for serving
-    mobile application. Development of in house stress testing tool using locust.io.
-\end{period}
-\subsection{University of Zagreb, Faculty of Electrical Engineering and Computing, Croatia}
-\begin{period}{Team leader}{Sep 2016 -- Jan 2017}
-    \item managed a team of 5 students in \textit{Pattern recognition} class project
-\end{period}
-\begin{period}{Teaching assistant}{Jan 2015 -- May 2015}
-    \item demonstrator at Laboratory exercises in \textit{Computer Architecture 1} class
-\end{period}
+
 \section{education}
-\subsection{University of Zagreb, Faculty of Electrical Engineering and Computing, Croatia}
-\begin{period}{MSc in Computer Science}{Sep 2016 -- Sep 2018}
-    \item thesis:
-        \textit{Local methods for Color Image Enhancement}
-    \item relevant courses:
-        \textit{Machine Learning},
-        \textit{Pattern Recognition},
-        \textit{Computer Vision},
-        \textit{Digital Image Processing and Analysis},
-        \textit{Text Analysis and Retrieval},
-        \textit{Neural Networks}
-\end{period}
-\begin{period}{BSc in Computer Engineering}{Sep 2012 -- Jul 2016}
-    \item thesis:
-        \textit{Embedded system for Temperature and Humidity measurement}
-    \item relevant courses:
-    \textit{Software Design,}
-    \textit{Operating Systems,}
-    \textit{Introduction to Theoretical Computer Science,}
-    \textit{Probability and Statistics}
+\subsection{University of Zagreb, Faculty of Electrical Engineering and Computing \hspace*{\fill}Croatia}
+\begin{period_empty}{Master of Computer Science}{2016--2018} 
+\end{period_empty}
+\begin{period_empty}{Bachelor of Computer Engineering}{2012--2016}
+\end{period_empty}
+
+\section{master thesis}
+\textbf{Title}: Local methods for Color Image Enhancement\\
+\textbf{Supervisor}: Prof. Dr. Sc. Sven Lončarić\\
+\textbf{Description}: This thesis explored research in the field of digital image enhancement, more specifically on the subject of local methods for color image enhancement.
+
+\section{bachelor thesis}
+\textbf{Title}: Embedded system for Temperature and Humidity measurement\\
+\textbf{Supervisor}: Prof. Dr. Sc. Hrvoje Mlinarić\\
+\textbf{Description}: Designing an embedded system based on ESP8266 processor that is connected
+to temperature and humidity sensor via I2C bus.
+
+
+\section{experience}
+\subsection{Amodo \hspace*{\fill}Zagreb}
+\begin{period}{Data Engineer}{Sep. 2018 -- Present}
+    \item Developing Amodo telematics Usage-based insurance platform in a small team of engineers.
+    (Django, PostgreSQL)
+    \item Developing scoring systems based on milage from GPS data recorded by smartphone SDK
+    and user behaviour based on smartphone usage. Integrating data enrichment and contextualization
+    pipelines based on GPS data using OSM, Google and HERE maps. (Java, Kafka, Cassandra)
+    \item Research and Development of sensor fusion from smartphone sensors to detect user Transportation
+    mode and behavioural events in traffic using Machine Learning. (Python, Tensorflow) 
+     
 \end{period}
 
-\section{technical skills}
-\begin{skills}
-    Intermediate &
-    \begin{itemize}
-        \item \textbf{Python} -- used in university courses and various projects, familiar with Scikit, Numpy, Tensorflow
-        \item \textbf{Django Framework} -- API development for serving mobile applications
-        \item \textbf{Java (SE)} -- used in university courses and development at Amodo 
-        \item \textbf{PostgreSQL} -- used at Amodo, every day backups, master-slave streaming replication
-        \item \textbf{Linux/Unix} -- used in university courses and personal time
-        \item \textbf{C} -- used in university courses and my BSc thesis
-        \item \textbf{Git} -- used in university courses and projects, every day use at Amodo
-        \item \textbf{Ansible} -- used in deployment at Amodo
-        \item \textbf{Bash} -- used in administrating servers at Amodo
-        \item \textbf{GPG} -- used for secure communication at Amodo, storing credentials
-    \end{itemize} \\
-    Basic &
-    \begin{itemize}
-        \item \textbf{C++} -- used in university courses
-        \item \textbf{Rust Language} -- used in my own personal time
-    \end{itemize} \\
-\end{skills}
 
-\section{other skills and interests}
-\begin{skills}
-        Languages &
-        \begin{itemize}
-                \item Croatian (native),
-                \item English (C1 level, Cambridge CEA)
-        \end{itemize} \\
-        Interests &
-        \begin{itemize}
-                \item Running
-        \item Brazilian Jiu Jitsu
-    \end{itemize} \\
-\end{skills}
+\begin{period}{DevOps Engineer, Student}{Jul. 2017 -- Sep. 2018}
+    \item Maintaining server infrastructure as code on AWS and Digital Ocean. (Ansible)
+\end{period}
+
+
+\subsection{Faculty of Electrical Engineering and Computing \hspace*{\fill}Zagreb}
+\begin{period}{Teaching assistant}{Jan. 2015 -- May. 2015}
+    \item Demonstrator at Laboratory exercises in \textit{Computer Architecture 1} class
+\end{period}
+
+
+\section{skills}
+\textbf{Programming Languages}:\\
+Advanced: Python, Java\\
+Intermediate: Rust\\
+Basic: C/C++\\
+
+\textbf{Miscellaneous}:\\
+Advanced: PostgreSQL\\
+Intermediate: Git, Ansible, Linux/Unix, SQL, PostGIS, Cassandra, Kafka, Django, Tensorflow, TDD\\
+Basic: OpenCV, Mediapipe, Docker, Kubernates, Bazel\\
+
+
+\section{Languages}
+\textbf{Croatian}: Mother tongue\\
+\textbf{English}: Professional working proficiency \hspace*{\fill} Cambridge CEA: C1
+
+
+\section{interests}
+Outside of work I like to spend my time training which includes Brazilian Jiu Jitsu and Cycling.
 
 \end{document}
